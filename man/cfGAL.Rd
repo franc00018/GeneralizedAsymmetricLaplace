@@ -1,8 +1,8 @@
-\name{characteristicfn}
-\alias{characteristicfn}
+\name{cfGAL}
+\alias{cfGAL}
 \title{Characteristic function of GAL distribution}
 \usage{
-characteristicfn(u, param, type = "mu", log = FALSE)
+cfGAL(u, param, type = "mu", log = FALSE)
 }
 \arguments{
   \item{u}{Transform variate}
@@ -12,7 +12,7 @@ characteristicfn(u, param, type = "mu", log = FALSE)
   \item{type}{Choose between "mu" or "kappa"
   parametrization}
 
-  \item{log}{Boolean for log-parameters}
+  \item{log}{Logical for log-parameters}
 }
 \value{
 Characteristic function value at point u for given

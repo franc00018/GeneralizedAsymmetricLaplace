@@ -9,12 +9,11 @@
 #' @param u Transform variate
 #' @param param Parameter vector
 #' @param type Choose between "mu" or "kappa" parametrization
-#' @param log Boolean for log-parameters
+#' @param log Logical for log-parameters
 #' @return Characteristic function value at point u for given parameter vector
 #' 
 #' @author Francois Pelletier
-
-characteristicfn <- function(u,param,type="mu",log=FALSE)
+cfGAL <- function(u,param,type="mu",log=FALSE)
 {
 	if(log)
 	{
