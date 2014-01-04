@@ -9,7 +9,7 @@
 #' Check for the validity of a parameter vector. Stop at error.
 #' @param param Parameter vector
 #' @param type Choose between "mu" or "kappa" parametrization
-#' @param log Logical for log-parameters 
+#' @param log Logical for log-parameters
 #' @return logical
 #' 
 #' @author Francois Pelletier
