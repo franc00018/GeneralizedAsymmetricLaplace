@@ -8,6 +8,7 @@
 #' @author Francois Pelletier
 dGAL <- function(x,param,type="mu",log=FALSE)
 {
+	testparGAL(param,type,log)
 	if(log)
 	{
 		if(type=="mu")

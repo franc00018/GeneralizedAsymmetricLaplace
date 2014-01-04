@@ -15,6 +15,7 @@
 #' @author Francois Pelletier
 changetypeGAL <- function(param,type="mu",target="kappa",log=FALSE)
 {
+	testparGAL(param,type,log)
 	if(log)
 	{
 		if(type=="mu" && target=="kappa")

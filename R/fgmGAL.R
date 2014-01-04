@@ -15,6 +15,7 @@
 #' @author Francois Pelletier
 mgfGAL <- function(u,param,type="mu",log=FALSE)
 {
+	testparGAL(param,type,log)
 	if(log)
 	{
 		if(type=="mu")
