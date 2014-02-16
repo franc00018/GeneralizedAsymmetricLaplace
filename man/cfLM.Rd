@@ -2,7 +2,7 @@
 \alias{cfLM}
 \title{Characteristic function of Laplace motion}
 \usage{
-cfLM(u, param, time, type = "mu", log = FALSE, start = 0)
+cfLM(u, param, time = 1, type = "mu", log = FALSE, start = 0)
 }
 \arguments{
   \item{u}{Transform variate}

@@ -15,7 +15,7 @@
 #' @return Characteristic function value at point u for given parameter vector
 #' 
 #' @author Francois Pelletier
-cfLM <- function(u,param,time,type="mu",log=FALSE,start=0)
+cfLM <- function(u,param,time=1,type="mu",log=FALSE,start=0)
 {
 	testparGAL(param,type,log)
 	if(log)
