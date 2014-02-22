@@ -8,4 +8,6 @@ Description: This is a package gathering different functions to work with the
     Generalized Asymmetric Laplace distribution
 Suggests:
     MASS
+Depends:
+    moments
 License: LGPL-3

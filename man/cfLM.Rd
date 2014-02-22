@@ -2,14 +2,14 @@
 \alias{cfLM}
 \title{Characteristic function of Laplace motion}
 \usage{
-cfLM(u, param, time = 1, type = "mu", log = FALSE, start = 0)
+cfLM(u, time, param, type = "mu", log = FALSE, start = 0)
 }
 \arguments{
   \item{u}{Transform variate}
 
-  \item{param}{Parameter vector}
-
   \item{time}{Time of the process}
+
+  \item{param}{Parameter vector}
 
   \item{type}{Choose between "mu" or "kappa"
   parametrization}

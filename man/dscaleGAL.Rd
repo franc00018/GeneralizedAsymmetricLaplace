@@ -1,8 +1,8 @@
-\name{scaleGAL}
-\alias{scaleGAL}
-\title{Apply scale and location transform to the GAL distribution}
+\name{dscaleGAL}
+\alias{dscaleGAL}
+\title{Derivative of scale and location transform to the GAL distribution}
 \usage{
-scaleGAL(param, type = "kappa", location, scale, log = FALSE)
+dscaleGAL(param, type = "kappa", location, scale, log = FALSE)
 }
 \arguments{
   \item{param}{Parameter vector}
@@ -17,10 +17,11 @@ scaleGAL(param, type = "kappa", location, scale, log = FALSE)
   \item{log}{Logical for log-parameters}
 }
 \value{
-The transformed parameter vector
+The matrix derivative of the transformed parameter vector
 }
 \description{
-Apply scale and location transform to the GAL distribution
+Derivative of scale and location transform to the GAL
+distribution
 }
 \author{
 Francois Pelletier
