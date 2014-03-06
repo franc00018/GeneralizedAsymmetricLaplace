@@ -7,19 +7,19 @@
 
 
 #' Raw moments of the GAL distribution
-#' @param order Order of raw moment
 #' @param param Parameter vector
+#' @param order Order of raw moment
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @return A numeric value of the raw moment
 #' @export mGAL
 #' @author Francois Pelletier
-mGAL <- function(order,param,type="mu",log=FALSE)
+mGAL <- function(param,order,type="mu",log=FALSE)
 {
 	testparGAL(param,type,log)
 	if(log)
 	{
-		return(mGAL(order,exp(param),type,log=FALSE))
+		return(mGAL(exp(param),order,type,log=FALSE))
 	}
 	else
 	{

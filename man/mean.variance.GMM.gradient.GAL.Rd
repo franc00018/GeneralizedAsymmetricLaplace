@@ -1,8 +1,8 @@
-\name{mean.variance.GMM.gradient}
-\alias{mean.variance.GMM.gradient}
+\name{mean.variance.GMM.gradient.GAL}
+\alias{mean.variance.GMM.gradient.GAL}
 \title{Gradient of the GMM moment conditions on mean and variance}
 \usage{
-\method{mean}{variance.GMM.gradient}(param, Data, type = "mu")
+\method{mean}{variance.GMM.gradient.GAL}(param, Data, type = "mu")
 }
 \arguments{
   \item{param}{GAL parameters}

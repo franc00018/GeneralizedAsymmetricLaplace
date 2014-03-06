@@ -2,12 +2,12 @@
 \alias{mGAL}
 \title{Raw moments of the GAL distribution}
 \usage{
-mGAL(order, param, type = "mu", log = FALSE)
+mGAL(param, order, type = "mu", log = FALSE)
 }
 \arguments{
-  \item{order}{Order of raw moment}
-
   \item{param}{Parameter vector}
+
+  \item{order}{Order of raw moment}
 
   \item{type}{Choose between "mu" or "kappa"
   parametrization}

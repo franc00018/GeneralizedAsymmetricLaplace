@@ -7,19 +7,19 @@
 ###############################################################################
 
 #' Centered moments of the GAL distribution
-#' @param order Order of raw moment
 #' @param param Parameter vector
+#' @param order Order of raw moment
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @return A numeric value of the centered moment
 #' @export cmGAL
 #' @author Francois Pelletier
-cmGAL <- function(order,param,type="mu",log=FALSE)
+cmGAL <- function(param,order,type="mu",log=FALSE)
 {
 	testparGAL(param,type,log)
 	if(log)
 	{
-		return(cmGAL(order,exp(param),type,log=FALSE))
+		return(cmGAL(exp(param),order,type,log=FALSE))
 	}
 	else
 	{
