@@ -6,6 +6,11 @@
 }
 \arguments{
   \item{param}{GAL parameters}
+
+  \item{Data}{Data sample}
+
+  \item{type}{Choose between "mu" or "kappa"
+  parametrization}
 }
 \value{
 gradient matrix

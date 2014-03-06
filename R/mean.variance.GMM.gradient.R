@@ -10,6 +10,8 @@
 #'
 #' Derivative of the moment conditions according to the vector of parameters
 #' @param param GAL parameters
+#' @param Data Data sample
+#' @param type Choose between "mu" or "kappa" parametrization
 #' @return gradient matrix
 #'
 #' @author François Pelletier
