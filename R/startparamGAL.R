@@ -26,12 +26,12 @@ startparamGAL <- function(data,type="mu",log=FALSE)
 		mu <- mom[3]*sigma*sqrt(2/(3*(mom[4])))
 		theta <- mom[1]-tau*mu
 		if(log==FALSE)
-			return(c(theta,sigma,mu,tau))
+			c(theta,sigma,mu,tau)
 		else
-			return(log(c(theta,sigma,mu,tau)))
+			log(c(theta,sigma,mu,tau))
 	}
 	if(type=="kappa")
 	{
-		return(changetypeGAL(startparamGAL(data,type="mu",log),type="kappa",target="mu",log))
+		changetypeGAL(startparamGAL(data,type="mu",log),type="kappa",target="mu",log)
 	}
 }
