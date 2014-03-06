@@ -13,8 +13,9 @@
 #' @param eval.time Time of the process
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
-
+#' @export dsaddleapproxGAL
 #' @return Saddlepoint approximation of the density function
+#' @author Francois Pelletier
 dsaddleapproxGAL <- function(x,param,eval.time=1,type="mu",log=FALSE)
 {
 	s <- saddlepointGAL(x,param,eval.time,type,log)

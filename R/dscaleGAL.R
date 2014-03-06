@@ -12,7 +12,7 @@
 #' @param scale Scale shift (in standard deviations)
 #' @param log Logical for log-parameters
 #' @return The matrix derivative of the transformed parameter vector
-#' 
+#' @export dscaleGAL
 #' @author Francois Pelletier
 dscaleGAL <- function(param,type="kappa",location,scale,log=FALSE)
 {
@@ -24,7 +24,7 @@ dscaleGAL <- function(param,type="kappa",location,scale,log=FALSE)
 	{
 		if(type=="kappa")
 		{
-			diag(c(scale,scale,1,1))
+			return(diag(c(scale,scale,1,1)))
 		}
 		else if (type=="mu")
 		{

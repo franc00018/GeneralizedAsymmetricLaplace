@@ -13,8 +13,9 @@
 #' @param eval.time Time of the process
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
-
 #' @return Saddlepoint approximation of the distribution function
+#' @export psaddleapproxEsscherGAL
+#' @author Francois Pelletier
 psaddleapproxEsscherGAL <- function(x,param,eval.time=1,type="mu",log=FALSE)
 {
 	s <- saddlepointEsscherGAL(x,param,eval.time,type,log)
@@ -23,11 +24,11 @@ psaddleapproxEsscherGAL <- function(x,param,eval.time=1,type="mu",log=FALSE)
 	
 	if(x==mGAL(1,param,type,log))
 	{
-		1/2 + diffcgfEsscherGAL(0,3,param,eval.time,type,log)/
-				(6*sqrt(2*pi)*diffcgfEsscherGAL(0,2,param,eval.time,type,log)^(3/2))
+		return(1/2 + diffcgfEsscherGAL(0,3,param,eval.time,type,log)/
+				(6*sqrt(2*pi)*diffcgfEsscherGAL(0,2,param,eval.time,type,log)^(3/2)))
 	}
 	else
 	{
-		pnorm(w)+dnorm(w)*(1/w-1/u)
+		return(pnorm(w)+dnorm(w)*(1/w-1/u))
 	}
 }

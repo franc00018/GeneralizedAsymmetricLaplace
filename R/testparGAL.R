@@ -11,7 +11,7 @@
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @return logical
-#' 
+#' @export testparGAL
 #' @author Francois Pelletier
 testparGAL <- function(param,type="mu",log=FALSE)
 {
@@ -49,5 +49,5 @@ testparGAL <- function(param,type="mu",log=FALSE)
 				stop("param 4 must be positive")	
 		}		
 	}
-	TRUE
+	return(TRUE)
 }

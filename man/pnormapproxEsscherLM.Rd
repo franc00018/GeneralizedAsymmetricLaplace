@@ -29,4 +29,7 @@ Normal distribution function approximation
 Normal approximation of the distribution function of the
 Esscher transform of a Laplace Motion
 }
+\author{
+Francois Pelletier
+}
 

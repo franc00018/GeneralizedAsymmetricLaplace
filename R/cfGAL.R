@@ -11,7 +11,7 @@
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @return Characteristic function value at point u for given parameter vector
-#' 
+#' @export cfGAL
 #' @author Francois Pelletier
 cfGAL <- function(u,param,type="mu",log=FALSE)
 {
@@ -20,24 +20,24 @@ cfGAL <- function(u,param,type="mu",log=FALSE)
 	{
 		if(type=="mu")
 		{
-			exp(1i*exp(param[1])*u)*(1+(exp(param[2])^2*u^2)/2-1i*exp(param[3])*u)^(-exp(param[4]))
+			return(exp(1i*exp(param[1])*u)*(1+(exp(param[2])^2*u^2)/2-1i*exp(param[3])*u)^(-exp(param[4])))
 		}
 		if(type=="kappa")
 		{
-			exp(1i*exp(param[1])*u)*(1+(exp(param[2])^2*u^2)/2-(1/2*1i)*
-						exp(param[2])*sqrt(2)*(1/exp(param[3])-exp(param[3]))*u)^(-exp(param[4]))
+			return(exp(1i*exp(param[1])*u)*(1+(exp(param[2])^2*u^2)/2-(1/2*1i)*
+						exp(param[2])*sqrt(2)*(1/exp(param[3])-exp(param[3]))*u)^(-exp(param[4])))
 		}
 	}
 	else
 	{
 		if(type=="mu")
 		{
-			exp(1i*param[1]*u)*(1+(param[2]^2*u^2)/2-1i*param[3]*u)^(-param[4])
+			return(exp(1i*param[1]*u)*(1+(param[2]^2*u^2)/2-1i*param[3]*u)^(-param[4]))
 		}
 		if(type=="kappa")
 		{
-			exp(1i*param[1]*u)*(1+(param[2]^2*u^2)/2-(1/2*1i)*
-						param[2]*sqrt(2)*(1/param[3]-param[3])*u)^(-param[4])
+			return(exp(1i*param[1]*u)*(1+(param[2]^2*u^2)/2-(1/2*1i)*
+						param[2]*sqrt(2)*(1/param[3]-param[3])*u)^(-param[4]))
 		}
 	}
 }

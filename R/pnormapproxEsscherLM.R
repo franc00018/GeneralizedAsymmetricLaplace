@@ -15,8 +15,9 @@
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @param start Starting value of the process
-
+#' @export pnormapproxEsscherLM
 #' @return Normal distribution function approximation
+#' @author Francois Pelletier
 pnormapproxEsscherLM <- function(x,param,hEsscher=0,eval.time=1,type="mu",log=FALSE,start=0)
 {
 	pnorm(x,start+eval.time*(mGAL(1,param,type,log)+hEsscher*cmGAL(2,param,type,log)),

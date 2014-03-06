@@ -24,4 +24,7 @@ Saddlepoint approximation of the density function
 Saddlepoint approximation of the density function of the
 GAL distribution
 }
+\author{
+Francois Pelletier
+}
 

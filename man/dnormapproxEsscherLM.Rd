@@ -30,4 +30,7 @@ transform of the specified Laplace motion
 Normal approximation of the density function of the Esscher
 transform of a Laplace Motion
 }
+\author{
+Francois Pelletier
+}
 

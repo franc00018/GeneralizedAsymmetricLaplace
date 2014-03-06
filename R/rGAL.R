@@ -12,7 +12,7 @@
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters 
 #' @return A vector of random numbers
-#' 
+#' @export rGAL
 #' @author Francois Pelletier
 rGAL <- function(n,param,type="mu",log=FALSE)
 {
@@ -21,7 +21,7 @@ rGAL <- function(n,param,type="mu",log=FALSE)
 	{
 		if(type=="mu")
 		{
-			rGAL(n,changetypeGAL(param,type="mu",target="kappa"),type="kappa",log=log)
+			return(rGAL(n,changetypeGAL(param,type="mu",target="kappa"),type="kappa",log=log))
 		}
 		if(type=="kappa")
 		{
@@ -30,14 +30,14 @@ rGAL <- function(n,param,type="mu",log=FALSE)
 			rgamma2 <- rgamma(n, shape = exp(param[4]), scale = exp(param[3]))
 			
 			# simulation de la variable GAL
-			exp(param[1]) + exp(param[2])/sqrt(2)*(rgamma1 - rgamma2)			
+			return(exp(param[1]) + exp(param[2])/sqrt(2)*(rgamma1 - rgamma2))			
 		}
 	}
 	else
 	{
 		if(type=="mu")
 		{
-			rGAL(n,changetypeGAL(param,type="mu",target="kappa"),type="kappa",log=log)
+			return(rGAL(n,changetypeGAL(param,type="mu",target="kappa"),type="kappa",log=log))
 		}
 		if(type=="kappa")
 		{
@@ -46,7 +46,7 @@ rGAL <- function(n,param,type="mu",log=FALSE)
 			rgamma2 <- rgamma(n, shape = param[4], scale = param[3])
 			
 			# simulation de la variable GAL
-			param[1] + param[2]/sqrt(2)*(rgamma1 - rgamma2)
+			return(param[1] + param[2]/sqrt(2)*(rgamma1 - rgamma2))
 		}
 	}
 }

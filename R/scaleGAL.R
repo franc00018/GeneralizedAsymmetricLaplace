@@ -12,7 +12,7 @@
 #' @param scale Scale shift (in standard deviations)
 #' @param log Logical for log-parameters
 #' @return The transformed parameter vector
-#' 
+#' @export scaleGAL
 #' @author Francois Pelletier
 scaleGAL <- function(param,type="kappa",location,scale,log=FALSE)
 {
@@ -24,13 +24,13 @@ scaleGAL <- function(param,type="kappa",location,scale,log=FALSE)
 	{
 		if(type=="kappa")
 		{
-			param * c(scale,scale,1,1) + c(location,0,0,0)
+			return(param * c(scale,scale,1,1) + c(location,0,0,0))
 		}
 		else if (type=="mu")
 		{
-			changetypeGAL(
+			return(changetypeGAL(
 					scaleGAL(changetypeGAL(param,type="mu",target="kappa"),type="kappa",location,scale),
-					type="kappa",target="mu")
+					type="kappa",target="mu"))
 		}
 	}
 }

@@ -13,15 +13,15 @@
 #' @param Data Data sample
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @return gradient matrix
-#'
+#' @export mean.variance.GMM.gradient.GAL
 #' @author François Pelletier
-mean.variance.GMM.gradient <- function(param,Data,type="mu")
+mean.variance.GMM.gradient.GAL <- function(param,Data,type="mu")
 {
 	if(type=="mu")
 	{
-		matrix(c(-1,0,-param[4],-param[3],
+		return(matrix(c(-1,0,-param[4],-param[3],
 						-2*(mean(Data)-param[1]-param[3]*param[4]),-2*param[2]*param[4],2*param[4]*(mean(Data)-param[1]-param[3]*param[4])+2*param[3]*param[4],-2*param[3]*(mean(Data)-param[1]-param[3]*param[4])-param[2]^2-param[3]^2),
-				nrow=4,ncol=2)
+				nrow=4,ncol=2))
 	}
 }
 

@@ -12,7 +12,7 @@
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @return A vector of the derivative of the analytical moment
-#' 
+#' @export dmGAL
 #' @author Francois Pelletier
 dmGAL <- function(param,order,type="mu",log=FALSE)
 {		if(log)
@@ -22,31 +22,31 @@ dmGAL <- function(param,order,type="mu",log=FALSE)
 		{
 			if(type=="mu")
 			{
-				c(1,0,eparam[4],eparam[3])
+				return(c(1,0,eparam[4],eparam[3]))
 			}
 			else if(type=="kappa")
 			{
-				c(1,
+				return(c(1,
 						-(1/2)*sqrt(2)*eparam[4]*(-1+eparam[3]^2)/eparam[3],
 						-(1/2)*eparam[4]*eparam[2]*sqrt(2)*(eparam[3]^2+1)/eparam[3]^2,
-						-(1/2)*sqrt(2)*eparam[2]*(-1+eparam[3]^2)/eparam[3])
+						-(1/2)*sqrt(2)*eparam[2]*(-1+eparam[3]^2)/eparam[3]))
 			}				
 		}
 		if(order==2)
 		{
 			if(type=="mu")
 			{
-				c(0, 
+				return(c(0, 
 						eparam[4]*eparam[2]/sqrt(eparam[4]*eparam[2]^2+eparam[4]*eparam[3]^2), 
 						eparam[4]*eparam[3]/sqrt(eparam[4]*eparam[2]^2+eparam[4]*eparam[3]^2), 
-						(1/2)*(eparam[2]^2+eparam[3]^2)/sqrt(eparam[4]*eparam[2]^2+eparam[4]*eparam[3]^2))
+						(1/2)*(eparam[2]^2+eparam[3]^2)/sqrt(eparam[4]*eparam[2]^2+eparam[4]*eparam[3]^2)))
 			}
 			else if(type=="kappa")
 			{
-				c(0, 
+				return(c(0, 
 						(1/2)*sqrt(2)*eparam[4]*eparam[2]*(eparam[3]^4+1)/(sqrt(eparam[4]*eparam[2]^2*(eparam[3]^4+1)/eparam[3]^2)*eparam[3]^2),
 						(1/2)*sqrt(2)*eparam[4]*eparam[2]^2*(eparam[3]^4-1)/(sqrt(eparam[4]*eparam[2]^2*(eparam[3]^4+1)/eparam[3]^2)*eparam[3]^3), 
-						(1/4)*sqrt(2)*eparam[2]^2*(eparam[3]^4+1)/(sqrt(eparam[4]*eparam[2]^2*(eparam[3]^4+1)/eparam[3]^2)*eparam[3]^2))
+						(1/4)*sqrt(2)*eparam[2]^2*(eparam[3]^4+1)/(sqrt(eparam[4]*eparam[2]^2*(eparam[3]^4+1)/eparam[3]^2)*eparam[3]^2)))
 			}				
 		}
 	}
@@ -56,31 +56,31 @@ dmGAL <- function(param,order,type="mu",log=FALSE)
 		{
 			if(type=="mu")
 			{
-				c(1,0,param[4],param[3])
+				return(c(1,0,param[4],param[3]))
 			}
 			else if(type=="kappa")
 			{
-				c(1,
+				return(c(1,
 						-(1/2)*sqrt(2)*param[4]*(-1+param[3]^2)/param[3],
 						-(1/2)*param[4]*param[2]*sqrt(2)*(param[3]^2+1)/param[3]^2,
-						-(1/2)*sqrt(2)*param[2]*(-1+param[3]^2)/param[3])
+						-(1/2)*sqrt(2)*param[2]*(-1+param[3]^2)/param[3]))
 			}				
 		}
 		if(order==2)
 		{
 			if(type=="mu")
 			{
-				c(0, 
+				return(c(0, 
 						param[4]*param[2]/sqrt(param[4]*param[2]^2+param[4]*param[3]^2), 
 						param[4]*param[3]/sqrt(param[4]*param[2]^2+param[4]*param[3]^2), 
-						(1/2)*(param[2]^2+param[3]^2)/sqrt(param[4]*param[2]^2+param[4]*param[3]^2))
+						(1/2)*(param[2]^2+param[3]^2)/sqrt(param[4]*param[2]^2+param[4]*param[3]^2)))
 			}
 			else if(type=="kappa")
 			{
-				c(0, 
+				return(c(0, 
 						(1/2)*sqrt(2)*param[4]*param[2]*(param[3]^4+1)/(sqrt(param[4]*param[2]^2*(param[3]^4+1)/param[3]^2)*param[3]^2),
 						(1/2)*sqrt(2)*param[4]*param[2]^2*(param[3]^4-1)/(sqrt(param[4]*param[2]^2*(param[3]^4+1)/param[3]^2)*param[3]^3), 
-						(1/4)*sqrt(2)*param[2]^2*(param[3]^4+1)/(sqrt(param[4]*param[2]^2*(param[3]^4+1)/param[3]^2)*param[3]^2))
+						(1/4)*sqrt(2)*param[2]^2*(param[3]^4+1)/(sqrt(param[4]*param[2]^2*(param[3]^4+1)/param[3]^2)*param[3]^2)))
 			}				
 		}
 	}

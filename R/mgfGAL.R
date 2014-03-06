@@ -11,7 +11,7 @@
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @return Moment generating function value at point u for given parameter vector
-#' 
+#' @export mgfGAL
 #' @author Francois Pelletier
 mgfGAL <- function(u,param,type="mu",log=FALSE)
 {
@@ -20,22 +20,22 @@ mgfGAL <- function(u,param,type="mu",log=FALSE)
 	{
 		if(type=="mu")
 		{
-			exp(exp(param[1])*u)*(1-(1/2)*exp(param[2])^2*u^2-exp(param[3])*u)^(-exp(param[4]))
+			return(exp(exp(param[1])*u)*(1-(1/2)*exp(param[2])^2*u^2-exp(param[3])*u)^(-exp(param[4])))
 		}
 		if(type=="kappa")
 		{
-			exp(exp(param[1])*u)*((exp(param[2])^2*u^2)/2+(exp(param[3])*exp(param[2])*u)/sqrt(2)-(exp(param[2])*u)/(sqrt(2)*exp(param[3]))+1)^(-exp(param[4]))
+			return(exp(exp(param[1])*u)*((exp(param[2])^2*u^2)/2+(exp(param[3])*exp(param[2])*u)/sqrt(2)-(exp(param[2])*u)/(sqrt(2)*exp(param[3]))+1)^(-exp(param[4])))
 		}
 	}
 	else
 	{
 		if(type=="mu")
 		{
-			exp(param[1]*u)*(1-(1/2)*param[2]^2*u^2-param[3]*u)^(-param[4])
+			return(exp(param[1]*u)*(1-(1/2)*param[2]^2*u^2-param[3]*u)^(-param[4]))
 		}
 		if(type=="kappa")
 		{
-			exp(param[1]*u)*((param[2]^2*u^2)/2+(param[3]*param[2]*u)/sqrt(2)-(param[2]*u)/(sqrt(2)*param[3])+1)^(-param[4])
+			return(exp(param[1]*u)*((param[2]^2*u^2)/2+(param[3]*param[2]*u)/sqrt(2)-(param[2]*u)/(sqrt(2)*param[3])+1)^(-param[4]))
 		}
 	}
 }
