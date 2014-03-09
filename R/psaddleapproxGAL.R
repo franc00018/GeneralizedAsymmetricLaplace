@@ -22,13 +22,8 @@ psaddleapproxGAL <- function(x,param,eval.time=1,type="mu",log=FALSE)
 	u <- s * sqrt(diffcgfGAL(s,2,param,eval.time,type,log))
 	w <- sign(s)*sqrt(2*(s*x-cgfGAL(s,param,type,log)))
 	
-	if(x==mGAL(1,param,type,log))
-	{
-		return(1/2 + diffcgfGAL(0,3,param,eval.time,type,log)/
-				(6*sqrt(2*pi)*diffcgfGAL(0,2,param,eval.time,type,log)^(3/2)))
-	}
-	else
-	{
-		return(pnorm(w)+dnorm(w)*(1/w-1/u))
-	}
+	(x==mGAL(param,1,type,log)) * (1/2 + diffcgfGAL(0,3,param,eval.time,type,log)/
+				(6*sqrt(2*pi)*diffcgfGAL(0,2,param,eval.time,type,log)^(3/2))) + 
+			(x!=mGAL(param,1,type,log)) * pnorm(w)+dnorm(w)*(1/w-1/u)
+			
 }
