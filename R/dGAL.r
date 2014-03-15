@@ -1,3 +1,10 @@
+# Density function for the GAL distribution
+# 
+# Author: François Pelletier
+#
+# LGPL 3.0
+###############################################################################
+
 #' Density function for the GAL distribution
 #' @param x vector of quantiles
 #' @param param Parameter vector
