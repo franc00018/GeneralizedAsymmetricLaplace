@@ -7,16 +7,18 @@
 
 #' Characteristic function of Laplace motion
 #' @param u Transform variate
-#' @param time Time of the process
 #' @param param Parameter vector
+#' @param time1 Start time of the process
+#' @param time2 End time of the process
 #' @param type Choose between "mu" or "kappa" parametrization
 #' @param log Logical for log-parameters
 #' @param start Starting value of the process
 #' @return Characteristic function value at point u for given parameter vector
 #' @export cfLM
 #' @author Francois Pelletier
-cfLM <- function(u,time,param,type="mu",log=FALSE,start=0)
+cfLM <- function(u,param,time1,time2,type="mu",log=FALSE,start=0)
 {
+	time <- time2-time1
 	testparGAL(param,type,log)
 	if(log)
 	{
