@@ -22,13 +22,9 @@ psaddleapproxEsscherGAL <- function(x,param,eval.time=1,type="mu",log=FALSE)
 	u <- s * sqrt(diffcgfEsscherGAL(s,2,param,eval.time,type,log))
 	w <- sign(s)*sqrt(2*(s*x-cgfEsscherGAL(s,param,type,log)))
 	
-	if(x==mGAL(1,param,type,log))
-	{
-		return(1/2 + diffcgfEsscherGAL(0,3,param,eval.time,type,log)/
+	(x==round(mGAL(param,1,type,log),4))*
+			(1/2 + diffcgfEsscherGAL(0,3,param,eval.time,type,log)/
 				(6*sqrt(2*pi)*diffcgfEsscherGAL(0,2,param,eval.time,type,log)^(3/2)))
-	}
-	else
-	{
-		return(pnorm(w)+dnorm(w)*(1/w-1/u))
-	}
+	+(x!=round(mGAL(param,1,type,log),4)) * (pnorm(w)+dnorm(w)*(1/w-1/u))
+	
 }
