@@ -20,7 +20,7 @@ psaddleapproxEsscherGAL <- function(x,param,eval.time=1,type="mu",log=FALSE)
 {
 	s <- saddlepointEsscherGAL(x,param,eval.time,type,log)
 	u <- s * sqrt(diffcgfEsscherGAL(s,2,param,eval.time,type,log))
-	w <- sign(s)*sqrt(2*(s*x-cgfEsscherGAL(s,param,type,log)))
+	w <- sign(s)*sqrt(2*(s*x-cgfEsscherGAL(s,param,1,eval.time,type,log)))
 	
 	(x==round(mGAL(param,1,type,log),4))*
 			(1/2 + diffcgfEsscherGAL(0,3,param,eval.time,type,log)/
